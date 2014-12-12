@@ -28,7 +28,7 @@ Plugin 'kien/ctrlp.vim'
 
 Plugin 'Klen/python-mode'
 
-"Plugin 'python_editing.vim'
+Plugin 'btpht/python_editing'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
