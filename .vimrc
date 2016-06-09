@@ -8,9 +8,11 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'adimit/prolog.vim'
+" Plugin 'adimit/prolog.vim'
+
+Plugin 'https://github.com/elzr/vim-json'
 
 Plugin 'tpope/vim-fugitive'
 
@@ -29,6 +31,16 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Klen/python-mode'
 
 Plugin 'btpht/python_editing'
+
+Plugin 'mbadran/headlights'
+
+Plugin 'scrooloose/syntastic'
+
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'rdnetto/YCM-Generator'
+
+Plugin 'sukima/xmledit'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -186,8 +198,6 @@ set expandtab
 
 "------------------------------------------------------------
 " Mappings {{{1
-"
-" Useful mappings
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
@@ -200,18 +210,16 @@ nnoremap <C-L> :nohl<CR><C-L>
 " vnoremap <-o> :sort<CR>
 
 " keep the block selected whn using indentation
-" vnoremap < <gv
-" vnoremap > >gb
+vnoremap < <gv
+vnoremap > >gb
 
+set t_Co=256
 colorscheme molokai
 
 noremap <silent> <C-d> :call smooth_scroll#down(10, 50, 2)<CR>
 noremap <silent> <C-u> :call smooth_scroll#up(10, 50 ,2)<CR>
 " noremap <silent> k :call smooth_scroll#down(1, 0, 1)<CR>
 " noremap <silent> j :call smooth_scroll#up(1, 0 ,1)<CR>
-
-" using F5 will remove all the trailing spaces in a file
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Restore cursor position, window position, and last search after running a
 " command.
@@ -257,14 +265,20 @@ autocmd FileType c,cpp,java,php,py autocmd BufWritePre <buffer> call Indent()
 " On save, remove trailing spaces in files matching the types
 autocmd FileType c,cpp,java,php,py,tex autocmd BufWritePre <buffer> call TrSpaces()
 
+" using F5 will remove all the trailing spaces in a file
+nnoremap <silent> <F5> :call TrSpaces()
+
 set colorcolumn=80
 set tw=79
+set lbr
 
 "don't automatically wrap text when typing
 set fo-=t
 
 "don't automatically wrap on load
-set nowrap
+set wrap
+set sidescroll=5
+set listchars+=precedes:<,extends:>
 
 vmap Q gp
 nmap Q gqap
@@ -272,6 +286,11 @@ nmap Q gqap
 set history=700
 set undolevels=700
 
+" not folded when file opened
 set nofoldenable
 
 set laststatus=2
+
+let g:syntastic_mode_map = { "mode": "active",
+                        \ "active_filetypes": [],
+                        \ "passive_filetypes": ["python"] }
