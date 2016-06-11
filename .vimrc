@@ -10,15 +10,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'adimit/prolog.vim'
-
 Plugin 'tpope/vim-fugitive'
 
 Plugin 'tomasr/molokai'
 
 Plugin 'WolfgangMehner/vim-plugins'
-
-Plugin 'ctags.vim'
 
 Plugin 'terryma/vim-smooth-scroll'
 
@@ -29,6 +25,10 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Klen/python-mode'
 
 Plugin 'btpht/python_editing'
+
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'rdnetto/YCM-Generator'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -191,8 +191,9 @@ set expandtab
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
-map Y y$
+"map Y y$
 map ¤ $
+
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
@@ -203,6 +204,8 @@ nnoremap <C-L> :nohl<CR><C-L>
 " vnoremap < <gv
 " vnoremap > >gb
 
+" Activate more colors in the Terminal
+set t_Co=256
 colorscheme molokai
 
 noremap <silent> <C-d> :call smooth_scroll#down(10, 50, 2)<CR>
