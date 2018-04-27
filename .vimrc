@@ -18,8 +18,6 @@ Plugin 'tomasr/molokai'
 
 Plugin 'WolfgangMehner/vim-plugins'
 
-Plugin 'terryma/vim-smooth-scroll'
-
 Plugin 'Lokaltog/vim-powerline'
 
 Plugin 'kien/ctrlp.vim'
@@ -37,6 +35,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 
 Plugin 'sukima/xmledit'
+
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
