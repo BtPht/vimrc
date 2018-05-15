@@ -18,13 +18,11 @@ Plugin 'tomasr/molokai'
 
 Plugin 'WolfgangMehner/vim-plugins'
 
-Plugin 'terryma/vim-smooth-scroll'
-
 Plugin 'Lokaltog/vim-powerline'
 
 Plugin 'kien/ctrlp.vim'
 
-Plugin 'Klen/python-mode'
+Plugin 'vim-scripts/Python-mode-klen'
 
 Plugin 'btpht/python_editing'
 
@@ -37,6 +35,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 
 Plugin 'sukima/xmledit'
+
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -182,7 +182,7 @@ set pastetoggle=<F11>
 
 " Indentation settings for using 2 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
-set shiftwidth=8
+set shiftwidth=4
 set softtabstop=4
 set expandtab
 
@@ -292,3 +292,5 @@ set laststatus=2
 let g:syntastic_mode_map = { "mode": "active",
                         \ "active_filetypes": [],
                         \ "passive_filetypes": ["python"] }
+
+set encoding=utf-8
