@@ -1,6 +1,10 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+if exists('py2') && has('python')
+elseif has('python3')
+endif
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -213,11 +217,6 @@ vnoremap > >gb
 " Activate more colors in the Terminal
 set t_Co=256
 colorscheme molokai
-
-noremap <silent> <C-d> :call smooth_scroll#down(10, 50, 2)<CR>
-noremap <silent> <C-u> :call smooth_scroll#up(10, 50 ,2)<CR>
-" noremap <silent> k :call smooth_scroll#down(1, 0, 1)<CR>
-" noremap <silent> j :call smooth_scroll#up(1, 0 ,1)<CR>
 
 " Restore cursor position, window position, and last search after running a
 " command.
